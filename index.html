@@ -1,0 +1,396 @@
+<!doctype html>
+<!--
+  Static portfolio. Content lives in data.json — edit that, never the markup.
+  fetch() needs a server. Run locally with:
+      python3 -m http.server
+  then open http://localhost:8000
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Static fallbacks so crawlers get content before JS runs.
+       These are overwritten from data.json on load (see setMeta). -->
+  <title>Clyde Arellano — Backend Software Developer</title>
+  <meta name="description"
+    content="Clyde Arellano — Backend Software Developer building reliable, scalable backend systems and APIs with clean, maintainable architecture.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Clyde Arellano — Backend Software Developer">
+  <meta property="og:description"
+    content="Building reliable, scalable backend systems and APIs with clean, maintainable architecture.">
+  <meta property="og:url" content="">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clyde Arellano — Backend Software Developer">
+  <meta name="twitter:description"
+    content="Building reliable, scalable backend systems and APIs with clean, maintainable architecture.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav" hidden>
+    <a class="nav__brand" href="#top" data-brand></a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div id="app"></div>
+  </main>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Scroll back to top">
+    <span class="to-top__arrow" aria-hidden="true">↑</span>
+  </button>
+
+  <script>
+    (function () {
+      "use strict";
+      var app = document.getElementById("app");
+      var nav = document.getElementById("nav");
+
+      function el(tag, cls, text) {
+        var n = document.createElement(tag);
+        if (cls) n.className = cls;
+        if (text != null) n.textContent = text;
+        return n;
+      }
+      function isText(v) { return typeof v === "string" && v.trim() !== ""; }
+      function extLink(a, url) {
+        a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer";
+      }
+
+      function overline(index, label) {
+        var p = el("p", "overline");
+        p.appendChild(el("span", "overline__idx", index));
+        p.appendChild(document.createTextNode(label));
+        return p;
+      }
+      function section(id, index, label) {
+        var s = el("section", "section reveal");
+        s.id = id;
+        s.setAttribute("aria-labelledby", id + "-label");
+        var ol = overline(index, label);
+        ol.id = id + "-label";
+        s.appendChild(ol);
+        return s;
+      }
+
+      function copyButton(email) {
+        var b = el("button", "copy");
+        b.type = "button";
+        b.setAttribute("aria-label", "Copy email address");
+        b.appendChild(el("span", "copy__label", "Copy"));
+        var done = el("span", "copy__done", "Copied");
+        done.setAttribute("aria-hidden", "true");
+        b.appendChild(done);
+        var live = el("span", "sr-only");
+        live.setAttribute("aria-live", "polite");
+        b.appendChild(live);
+        var t;
+        b.addEventListener("click", function () {
+          function ok() {
+            b.classList.add("is-copied");
+            live.textContent = "Email copied to clipboard";
+            clearTimeout(t);
+            t = setTimeout(function () {
+              b.classList.remove("is-copied");
+              live.textContent = "";
+            }, 1800);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(ok, fallback);
+          } else { fallback(); }
+          function fallback() {
+            var ta = el("textarea");
+            ta.value = email;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand("copy"); ok(); } catch (e) { }
+            document.body.removeChild(ta);
+          }
+        });
+        return b;
+      }
+
+      function actions(d, place) {
+        var wrap = el("div", "actions");
+        if (d.contact && isText(d.contact.email)) {
+          var mail = el("a", "btn btn--primary");
+          mail.href = "mailto:" + d.contact.email;
+          mail.textContent = place === "footer" ? "Get in touch" : "Email me";
+          wrap.appendChild(mail);
+          wrap.appendChild(copyButton(d.contact.email));
+        }
+        if (isText(d.resumeUrl)) {
+          var cv = el("a", "btn btn--quiet", "Résumé");
+          extLink(cv, d.resumeUrl);
+          wrap.appendChild(cv);
+        }
+        return wrap.children.length ? wrap : null;
+      }
+
+      function setMeta(d) {
+        var title = d.name + " — " + d.role;
+        var desc = isText(d.tagline) ? d.tagline : (d.headline || "");
+        document.title = title;
+        var set = function (sel, attr, val) {
+          var n = document.querySelector(sel);
+          if (n && isText(val)) n.setAttribute(attr, val);
+        };
+        set('meta[name="description"]', "content", desc);
+        set('meta[property="og:title"]', "content", title);
+        set('meta[property="og:description"]', "content", desc);
+        set('meta[property="og:url"]', "content", location.href);
+        set('meta[name="twitter:title"]', "content", title);
+        set('meta[name="twitter:description"]', "content", desc);
+        var brand = document.querySelector("[data-brand]");
+        if (brand) {
+          brand.textContent = "";
+          var logo = el("img", "nav__brand-img");
+          logo.src = "favicon.png";
+          logo.alt = d.name;
+          logo.width = 32;
+          logo.height = 32;
+          brand.appendChild(logo);
+        }
+      }
+
+      function render(d) {
+        setMeta(d);
+        var frag = document.createDocumentFragment();
+
+        var hero = el("section", "hero reveal");
+        hero.id = "top";
+        hero.appendChild(overline("00", "Portfolio"));
+        if (isText(d.availability)) {
+          var pill = el("p", "pill");
+          pill.appendChild(el("span", "pill__dot"));
+          pill.appendChild(document.createTextNode(d.availability));
+          hero.appendChild(pill);
+        }
+        if (isText(d.name)) hero.appendChild(el("h1", "hero__name", d.name));
+        if (isText(d.role)) hero.appendChild(el("p", "hero__role", d.role));
+        if (isText(d.headline)) hero.appendChild(el("p", "hero__headline", d.headline));
+        if (isText(d.tagline)) hero.appendChild(el("p", "hero__tagline", d.tagline));
+        var heroCta = actions(d, "hero");
+        if (heroCta) hero.appendChild(heroCta);
+        frag.appendChild(hero);
+
+        if (isText(d.about)) {
+          var about = section("about", "01", "About");
+          about.appendChild(el("p", "prose", d.about));
+          frag.appendChild(about);
+        }
+
+        if (d.experience && d.experience.length) {
+          var work = section("work", "02", "Experience");
+          var wlist = el("ul", "list");
+          d.experience.forEach(function (job) {
+            var li = el("li", "item reveal");
+            var head = el("div", "item__head");
+            var h = el("h3", "item__title", job.title || "");
+            if (isText(job.org)) {
+              h.appendChild(document.createTextNode(" "));
+              h.appendChild(el("span", "item__org", job.org));
+            }
+            head.appendChild(h);
+            if (isText(job.period)) head.appendChild(el("span", "item__meta", job.period));
+            li.appendChild(head);
+            if (isText(job.detail)) li.appendChild(el("p", "item__detail", job.detail));
+            wlist.appendChild(li);
+          });
+          work.appendChild(wlist);
+          frag.appendChild(work);
+        }
+
+        if (d.projects && d.projects.length) {
+          var proj = section("projects", "03", "Projects");
+          var plist = el("ul", "list");
+          d.projects.forEach(function (p) {
+            var li = el("li", "item reveal");
+            var box = el(isText(p.url) ? "a" : "div", "item__link");
+            if (isText(p.url)) { extLink(box, p.url); }
+            var head = el("div", "item__head");
+            head.appendChild(el("h3", "item__title", p.name || ""));
+            if (isText(p.url)) {
+              var arrow = el("span", "item__meta item__arrow", "↗");
+              arrow.setAttribute("aria-hidden", "true");
+              head.appendChild(arrow);
+            }
+            box.appendChild(head);
+            if (isText(p.role)) box.appendChild(el("p", "item__role", p.role));
+            if (isText(p.problem)) {
+              var pr = el("p", "case");
+              pr.appendChild(el("span", "case__label", "Problem"));
+              pr.appendChild(document.createTextNode(p.problem));
+              box.appendChild(pr);
+            }
+            if (isText(p.outcome)) {
+              var oc = el("p", "case");
+              oc.appendChild(el("span", "case__label", "Outcome"));
+              oc.appendChild(document.createTextNode(p.outcome));
+              box.appendChild(oc);
+            }
+            if (p.tags && p.tags.length) {
+              var tags = el("ul", "tags");
+              p.tags.forEach(function (t) { tags.appendChild(el("li", "tag", t)); });
+              box.appendChild(tags);
+            }
+            li.appendChild(box);
+            plist.appendChild(li);
+          });
+          proj.appendChild(plist);
+          frag.appendChild(proj);
+        }
+
+        if (d.skills && d.skills.length) {
+          var skills = section("skills", "04", "Capabilities");
+          var slist = el("ul", "skills");
+          d.skills.forEach(function (s) {
+            if (isText(s)) slist.appendChild(el("li", "skill reveal", s));
+          });
+          skills.appendChild(slist);
+          frag.appendChild(skills);
+        }
+
+        var contact = section("contact", "05", "Contact");
+        var cwrap = el("div", "contact__body");
+        if (d.contact && isText(d.contact.email)) {
+          var email = el("a", "contact__email");
+          email.href = "mailto:" + d.contact.email;
+          email.textContent = d.contact.email;
+          cwrap.appendChild(email);
+        }
+        var footCta = actions(d, "footer");
+        if (footCta) cwrap.appendChild(footCta);
+        if (d.contact && d.contact.socials && d.contact.socials.length) {
+          var socials = el("ul", "socials");
+          d.contact.socials.forEach(function (s) {
+            if (!isText(s.url) || !isText(s.label)) return;
+            var li = el("li");
+            var a = el("a", "link", s.label);
+            extLink(a, s.url);
+            li.appendChild(a);
+            socials.appendChild(li);
+          });
+          if (socials.children.length) cwrap.appendChild(socials);
+        }
+        contact.appendChild(cwrap);
+        frag.appendChild(contact);
+
+        app.innerHTML = "";
+        app.appendChild(frag);
+
+        var footer = el("footer", "footer");
+        var meta = el("p", "footer__meta");
+        meta.textContent = "© " + new Date().getFullYear() + " " + (d.name || "");
+        footer.appendChild(meta);
+        if (isText(d.lastUpdated)) {
+          footer.appendChild(el("p", "footer__meta footer__updated", "Last updated: " + d.lastUpdated));
+        }
+        document.getElementById("main").insertAdjacentElement("afterend", footer);
+
+        nav.hidden = false;
+        enhance();
+      }
+
+      // ONE IntersectionObserver: reveals on enter + drives nav aria-current.
+      function enhance() {
+        var reveals = [].slice.call(document.querySelectorAll(".reveal"));
+
+        document.querySelectorAll(".list, .skills").forEach(function (group) {
+          [].slice.call(group.children).forEach(function (child, i) {
+            child.style.setProperty("--i", Math.min(i, 8));
+          });
+        });
+
+        var links = {};
+        document.querySelectorAll(".nav__links a").forEach(function (a) {
+          var id = a.getAttribute("href").slice(1);
+          links[id] = a;
+          var sec = document.getElementById(id);
+          if (sec) sec.dataset.nav = "1";
+        });
+
+        var toTop = document.getElementById("toTop");
+        if (toTop) {
+          toTop.addEventListener("click", function () {
+            var soft = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            window.scrollTo({ top: 0, behavior: soft ? "smooth" : "auto" });
+            var brand = document.querySelector(".nav__brand");
+            if (brand) brand.focus();
+          });
+        }
+
+        if (!("IntersectionObserver" in window)) {
+          reveals.forEach(function (n) { n.classList.add("in"); });
+          if (toTop) toTop.classList.add("show");
+          return;
+        }
+
+        var ratios = {};
+        function updateNav() {
+          var best = null, bestR = 0;
+          for (var id in ratios) {
+            if (ratios[id] > bestR) { bestR = ratios[id]; best = id; }
+          }
+          for (var k in links) {
+            var on = k === best;
+            links[k].classList.toggle("is-active", on);
+            if (on) links[k].setAttribute("aria-current", "true");
+            else links[k].removeAttribute("aria-current");
+          }
+        }
+
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && e.boundingClientRect.top < window.innerHeight * 0.92) {
+              e.target.classList.add("in");
+              // reveal-once, but keep watching sections (nav) and the hero (button sentinel)
+              if (!e.target.dataset.nav && e.target.id !== "top") io.unobserve(e.target);
+            }
+            if (e.target.dataset.nav) {
+              ratios[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0;
+            }
+            if (e.target.id === "top" && toTop) {
+              toTop.classList.toggle("show", !e.isIntersecting);
+            }
+          });
+          updateNav();
+        }, { threshold: [0, 0.15, 0.35, 0.6, 1], rootMargin: "0px 0px -8% 0px" });
+
+        reveals.forEach(function (n) { io.observe(n); });
+      }
+
+      function fail() {
+        app.innerHTML = "";
+        var m = el("section", "section");
+        m.appendChild(el("p", "prose", "Couldn't load the portfolio content. If you're viewing this locally, serve the folder with a static server (see the note at the top of index.html) rather than opening the file directly."));
+        app.appendChild(m);
+      }
+
+      fetch("data.json", { cache: "no-cache" })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(render)
+        .catch(fail);
+    })();
+  </script>
+</body>
+
+</html>
