@@ -559,6 +559,12 @@ html:not(.dark-theme) .icon-sun { display: none; }
   width: 100%;
   height: auto;
 }
+.project-gallery__caption {
+  padding: var(--sp-1) var(--sp-2);
+  color: var(--muted);
+  border-top: 1px solid var(--hairline);
+  font-size: var(--step--1);
+}
 
 /* -------------------------------------------------------------- Selector */
 

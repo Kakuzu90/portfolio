@@ -32,7 +32,11 @@ For screenshots, use paths relative to this directory:
 
 ```json
 "screenshots": [
-  { "src": "images/project-dashboard.png", "alt": "Project dashboard" }
+  {
+    "src": "images/project-dashboard.png",
+    "alt": "Project dashboard",
+    "caption": "Illustrative interface mockup"
+  }
 ]
 ```
 

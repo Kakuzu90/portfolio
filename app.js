@@ -262,6 +262,9 @@
       img.loading = "lazy";
       img.decoding = "async";
       picture.appendChild(img);
+      if (typeof image !== "string" && isText(image.caption)) {
+        picture.appendChild(el("figcaption", "project-gallery__caption", image.caption));
+      }
       gallery.appendChild(picture);
     });
     parent.appendChild(gallery);
