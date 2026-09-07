@@ -322,6 +322,25 @@ html:not(.dark-theme) .icon-sun {
   gap: 1.25rem;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  right: -4%;
+  top: 32%;
+  transform: translateY(-50%);
+  width: min(38vw, 500px);
+  aspect-ratio: 1;
+  background: url("/favicon.png") no-repeat center / contain;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
 .hero > .overline {
   grid-column: 1 / -1;
 }
@@ -643,25 +662,28 @@ html:not(.dark-theme) .icon-sun {
 }
 
 .service {
-  min-height: 12rem;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 0.85rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
 }
 
-.service::before {
-  width: 2rem;
-  height: 2px;
-  content: "";
-  background: var(--accent);
+.service__badge {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
 }
 
 .service__title {
-  margin-top: 2rem;
+  margin-top: 0.4rem;
   font-size: clamp(1.15rem, 1.7vw, 1.45rem);
   font-weight: 660;
   line-height: 1.2;
@@ -1226,6 +1248,10 @@ html:not(.dark-theme) .icon-sun {
 @media (max-width: 759px) {
   .nav__section-link {
     display: none !important;
+  }
+
+  .hero::before {
+    display: none;
   }
 
   .view-switch {

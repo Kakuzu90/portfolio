@@ -34,8 +34,11 @@
       "role": "System Designer & Backend Developer",
       "problem": "Educational organizations needed a centralized platform for document submissions, reviews, comments, approvals, and revision tracking.",
       "outcome": "Designed a document management workflow featuring submissions, reviewer feedback, approval pipelines, notifications, and comprehensive status tracking.",
-      "url": "#",
-      "tags": ["Laravel", "Document Management", "Workflow"],
+      "tags": [
+        "Laravel",
+        "Document Management",
+        "Workflow"
+      ],
       "technicalDetails": {
         "architecture": "A Laravel application organized around document submissions, reviewer feedback, approval stages, notifications, and status history.",
         "responsibilities": [
@@ -49,7 +52,13 @@
       "clientSummary": "A central workspace for submitting, reviewing, revising, and approving educational documents.",
       "clientProblem": "Document reviews were difficult to coordinate when submissions, feedback, revisions, and approvals lived in separate places.",
       "clientSolution": "Built one system where teachers can submit documents and reviewers can provide feedback, request changes, and approve work.",
-      "features": ["Document submissions", "Reviewer comments", "Approval stages", "Revision tracking", "Status notifications"],
+      "features": [
+        "Document submissions",
+        "Reviewer comments",
+        "Approval stages",
+        "Revision tracking",
+        "Status notifications"
+      ],
       "benefit": "Keeps the full review process organized and makes each document's current status easier to understand."
     },
     {
@@ -58,7 +67,12 @@
       "role": "Full Stack Developer",
       "problem": "Passengers needed an efficient way to connect with nearby drivers through a centralized booking platform.",
       "outcome": "Developed a ride-matching platform featuring booking workflows, driver-passenger matching logic, and real-time ride status updates using Laravel and Vue.js.",
-      "tags": ["Laravel", "Vue.js", "MySQL", "Transportation"],
+      "tags": [
+        "Laravel",
+        "Vue.js",
+        "MySQL",
+        "Transportation"
+      ],
       "technicalDetails": {
         "architecture": "A Laravel backend and MySQL database support a Vue.js interface for ride booking, driver-passenger matching, and ride status updates.",
         "responsibilities": [
@@ -72,7 +86,12 @@
       "clientSummary": "A booking platform that helps passengers find nearby drivers and follow the progress of a ride.",
       "clientProblem": "Passengers needed a simpler way to request rides and connect with available drivers.",
       "clientSolution": "Created a centralized platform for booking, matching passengers with drivers, and sharing ride status updates.",
-      "features": ["Ride booking", "Nearby driver matching", "Passenger and driver workflows", "Ride status updates"],
+      "features": [
+        "Ride booking",
+        "Nearby driver matching",
+        "Passenger and driver workflows",
+        "Ride status updates"
+      ],
       "benefit": "Gives passengers and drivers one clear place to coordinate a ride from request through completion."
     },
     {
@@ -81,7 +100,12 @@
       "role": "Full Stack Developer",
       "problem": "Academic research documents were difficult to organize, secure, and retrieve across different colleges and departments.",
       "outcome": "Built a role-based document repository that streamlines uploading, searching, downloading, and managing academic research with structured classification and secure access controls.",
-      "tags": ["Laravel", "Vue.js", "MySQL", "Document Management"],
+      "tags": [
+        "Laravel",
+        "Vue.js",
+        "MySQL",
+        "Document Management"
+      ],
       "technicalDetails": {
         "architecture": "A Laravel and MySQL backend with a Vue.js interface, structured document classification, role-based permissions, search, and download flows.",
         "responsibilities": [
@@ -95,7 +119,12 @@
       "clientSummary": "A secure, searchable home for academic research across colleges and departments.",
       "clientProblem": "Research documents were hard to organize and retrieve consistently across different academic units.",
       "clientSolution": "Built a shared repository where authorized users can upload, classify, search, download, and manage research documents.",
-      "features": ["Structured document library", "Search and download", "User access levels", "College and department classification"],
+      "features": [
+        "Structured document library",
+        "Search and download",
+        "User access levels",
+        "College and department classification"
+      ],
       "benefit": "Makes academic work easier to find while keeping document access and management organized."
     },
     {
@@ -104,7 +133,12 @@
       "role": "Full Stack Developer",
       "problem": "Managing student ID information manually made updates, customization, and record maintenance inefficient.",
       "outcome": "Developed a centralized ID management platform allowing administrators to configure student records and ID templates through an intuitive web interface.",
-      "tags": ["Laravel", "Vue.js", "MySQL", "Administration"],
+      "tags": [
+        "Laravel",
+        "Vue.js",
+        "MySQL",
+        "Administration"
+      ],
       "technicalDetails": {
         "architecture": "A Laravel and MySQL application with a Vue.js administration interface for student records and configurable ID templates.",
         "responsibilities": [
@@ -115,7 +149,11 @@
       "clientSummary": "An administration system for managing student information and configuring ID templates.",
       "clientProblem": "Manual student ID preparation made record changes and template updates time-consuming.",
       "clientSolution": "Created a central interface where administrators can maintain student records and configure ID layouts.",
-      "features": ["Student record management", "Configurable ID templates", "Central administration interface"],
+      "features": [
+        "Student record management",
+        "Configurable ID templates",
+        "Central administration interface"
+      ],
       "benefit": "Simplifies routine ID updates and keeps student information in one manageable system."
     },
     {
@@ -124,7 +162,12 @@
       "role": "Full Stack Developer",
       "problem": "Students often missed important campus announcements due to fragmented communication channels.",
       "outcome": "Built web and mobile applications enabling administrators to publish announcements and send real-time notifications directly to students.",
-      "tags": ["Laravel", "Vue.js", "Java", "Notifications"],
+      "tags": [
+        "Laravel",
+        "Vue.js",
+        "Java",
+        "Notifications"
+      ],
       "technicalDetails": {
         "architecture": "A Laravel backend supports a Vue.js web application and Java mobile application for publishing announcements and delivering notifications.",
         "responsibilities": [
@@ -138,7 +181,12 @@
       "clientSummary": "A web and mobile communication system for publishing campus updates directly to students.",
       "clientProblem": "Important announcements were spread across different channels and could easily be missed.",
       "clientSolution": "Built tools for administrators to publish updates and send timely notifications to students.",
-      "features": ["Announcement publishing", "Web administration", "Student mobile application", "Timely notifications"],
+      "features": [
+        "Announcement publishing",
+        "Web administration",
+        "Student mobile application",
+        "Timely notifications"
+      ],
       "benefit": "Creates a clearer communication channel between campus administrators and students."
     },
     {
@@ -147,7 +195,12 @@
       "role": "Machine Learning & Computer Vision Developer",
       "problem": "Communication between individuals using American Sign Language and non-signers can be difficult without real-time translation tools.",
       "outcome": "Built a real-time ASL recognition system using MediaPipe hand landmarks and TensorFlow models to accurately classify multiple hand gestures from live camera input.",
-      "tags": ["Python", "TensorFlow", "MediaPipe", "Machine Learning"],
+      "tags": [
+        "Python",
+        "TensorFlow",
+        "MediaPipe",
+        "Machine Learning"
+      ],
       "technicalDetails": {
         "architecture": "A Python computer-vision pipeline extracts hand landmarks from live camera input with MediaPipe and classifies gestures with TensorFlow models.",
         "responsibilities": [
@@ -161,7 +214,12 @@
       "clientSummary": "A camera-based tool that recognizes multiple American Sign Language hand gestures in real time.",
       "clientProblem": "People who do not understand American Sign Language can find it difficult to interpret signed communication.",
       "clientSolution": "Created a system that watches hand movements through a camera and identifies supported gestures as they are made.",
-      "features": ["Live camera recognition", "Hand tracking", "Multiple gesture classification", "Immediate on-screen results"],
+      "features": [
+        "Live camera recognition",
+        "Hand tracking",
+        "Multiple gesture classification",
+        "Immediate on-screen results"
+      ],
       "benefit": "Demonstrates how computer vision can help make signed communication more accessible."
     }
   ],
@@ -196,36 +254,34 @@
     ],
     "services": [
       {
+        "icon": "web",
         "name": "Custom Web Applications",
-        "description": "Software designed around your workflow, users, and business requirements."
+        "description": "Tailored web apps built around your workflow, users, and business goals — from MVP to full product."
       },
       {
-        "name": "Internal Business Systems",
-        "description": "Central tools that help teams organize records, approvals, and day-to-day work."
+        "icon": "dashboard",
+        "name": "Admin Dashboards & Internal Systems",
+        "description": "Central tools and clear dashboards for managing records, approvals, users, and daily operations."
       },
       {
-        "name": "Admin Dashboards",
-        "description": "Clear interfaces for managing users, content, activity, and important information."
-      },
-      {
+        "icon": "api",
         "name": "API Development & Integration",
-        "description": "Reliable connections between your application and the services it depends on."
+        "description": "Reliable APIs and connections between your application and the services it depends on."
       },
       {
+        "icon": "automation",
         "name": "Automation Tools",
-        "description": "Purpose-built tools that reduce repetitive work and keep processes consistent."
+        "description": "Purpose-built tools that cut repetitive work and keep your processes consistent."
       },
       {
-        "name": "Existing System Maintenance",
-        "description": "Improvements, fixes, and continued support for software you already use."
-      },
-      {
-        "name": "MVP Development",
-        "description": "A focused first version that turns a product idea into something people can use."
-      },
-      {
+        "icon": "backend",
         "name": "Backend Development",
-        "description": "The secure, dependable systems behind web and mobile applications."
+        "description": "Secure, dependable systems and databases powering your web and mobile applications."
+      },
+      {
+        "icon": "maintenance",
+        "name": "System Maintenance & Support",
+        "description": "Improvements, fixes, and ongoing support for the software you already rely on."
       }
     ],
     "process": [
@@ -259,7 +315,15 @@
       }
     ],
     "technologyIntro": "I choose proven tools based on the project's needs. Technology supports the outcome; it is not the starting point.",
-    "technologies": ["Laravel", "PHP", "Vue.js", "JavaScript", "MySQL", "Python", "Docker"],
+    "technologies": [
+      "Laravel",
+      "PHP",
+      "Vue.js",
+      "JavaScript",
+      "MySQL",
+      "Python",
+      "Docker"
+    ],
     "contactHeading": "Have a project in mind?",
     "contactText": "Let's discuss what you're trying to build and the problem you want it to solve."
   },

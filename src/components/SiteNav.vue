@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <header class="nav">
-    <a class="nav__brand" href="#top">
+    <a class="nav__brand" href="javascript:void(0);">
       <img class="nav__brand-img" :src="assetUrl('favicon.png')" :alt="name" width="32" height="32" />
     </a>
     <nav class="nav__links" aria-label="Portfolio navigation">

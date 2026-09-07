@@ -6,6 +6,7 @@ import PortfolioHero from '../components/PortfolioHero.vue'
 import ProjectCard from '../components/ProjectCard.vue'
 import ScrollTopButton from '../components/ScrollTopButton.vue'
 import SectionHeading from '../components/SectionHeading.vue'
+import ServiceIcon from '../components/ServiceIcon.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import SiteNav from '../components/SiteNav.vue'
 import { useMeta } from '../composables/useMeta'
@@ -51,6 +52,7 @@ useMeta(() => ({
       <SectionHeading id="services-label" index="02" label="Services" />
       <ul class="services">
         <li v-for="service in portfolio.client.services" :key="service.name" class="service reveal">
+          <span class="service__badge" aria-hidden="true"><ServiceIcon :name="service.icon" /></span>
           <h3 class="service__title">{{ service.name }}</h3>
           <p class="service__detail">{{ service.description }}</p>
         </li>
