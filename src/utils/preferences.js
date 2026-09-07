@@ -18,14 +18,6 @@ export function savePortfolioView(view) {
   }
 }
 
-export function clearPortfolioView() {
-  try {
-    localStorage.removeItem('portfolio_view')
-  } catch {
-    // Navigation still works when storage is unavailable.
-  }
-}
-
 export function assetUrl(path) {
   if (!path) return ''
   return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`

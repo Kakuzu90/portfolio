@@ -80,7 +80,7 @@ useMeta(() => ({
 
       <ContactSection :portfolio="portfolio" mode="client" />
     </main>
-    <SiteFooter :name="portfolio.name" :last-updated="portfolio.lastUpdated" />
+    <SiteFooter :name="portfolio.name" :last-updated="portfolio.lastUpdated" mode="client" />
     <ScrollTopButton :show="showToTop" />
   </div>
 </template>

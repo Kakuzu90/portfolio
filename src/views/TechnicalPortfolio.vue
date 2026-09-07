@@ -67,7 +67,7 @@ useMeta(() => ({
 
       <ContactSection :portfolio="portfolio" mode="dev" />
     </main>
-    <SiteFooter :name="portfolio.name" :last-updated="portfolio.lastUpdated" />
+    <SiteFooter :name="portfolio.name" :last-updated="portfolio.lastUpdated" mode="dev" />
     <ScrollTopButton :show="showToTop" />
   </div>
 </template>
