@@ -9,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-  <section id="top" class="hero reveal">
+  <section id="top" class="hero reveal" :class="`hero--${mode}`">
     <SectionHeading id="top-label" index="00" :label="mode === 'client' ? 'For Clients' : 'Technical Portfolio'" />
     <p v-if="portfolio.availability" class="pill"><span class="pill__dot" />{{ portfolio.availability }}</p>
     <h1 class="hero__name">{{ portfolio.name }}</h1>
@@ -24,5 +24,6 @@ defineProps({
       <p class="hero__tagline">{{ portfolio.tagline }}</p>
     </template>
     <ActionButtons :email="portfolio.contact.email" :resume-url="portfolio.resumeUrl" :mode="mode" />
+    <span class="hero__scroll" aria-hidden="true">Scroll to explore <span>↓</span></span>
   </section>
 </template>

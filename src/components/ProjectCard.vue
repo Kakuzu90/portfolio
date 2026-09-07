@@ -26,13 +26,6 @@ const tag = computed(() => (hasLink.value ? 'a' : 'article'))
 
     <template v-if="mode === 'client'">
       <p v-if="project.clientSummary" class="project-summary">{{ project.clientSummary }}</p>
-      <p class="case"><span class="case__label">The problem</span>{{ project.clientProblem || project.problem }}</p>
-      <p class="case"><span class="case__label">The solution</span>{{ project.clientSolution || project.outcome }}</p>
-      <div v-if="project.features?.length" class="case">
-        <p class="case__label">Key features</p>
-        <ul class="feature-list"><li v-for="feature in project.features" :key="feature">{{ feature }}</li></ul>
-      </div>
-      <p v-if="project.benefit" class="case"><span class="case__label">Benefit</span>{{ project.benefit }}</p>
       <div v-if="project.screenshots?.length" class="project-gallery">
         <figure v-for="(image, index) in project.screenshots" :key="typeof image === 'string' ? image : image.src" class="project-gallery__item">
           <img
@@ -44,6 +37,15 @@ const tag = computed(() => (hasLink.value ? 'a' : 'article'))
           />
           <figcaption v-if="typeof image !== 'string' && image.caption" class="project-gallery__caption">{{ image.caption }}</figcaption>
         </figure>
+      </div>
+      <div class="project-details">
+        <p class="case"><span class="case__label">The problem</span>{{ project.clientProblem || project.problem }}</p>
+        <p class="case"><span class="case__label">The solution</span>{{ project.clientSolution || project.outcome }}</p>
+        <div v-if="project.features?.length" class="case">
+          <p class="case__label">Key features</p>
+          <ul class="feature-list"><li v-for="feature in project.features" :key="feature">{{ feature }}</li></ul>
+        </div>
+        <p v-if="project.benefit" class="case"><span class="case__label">Benefit</span>{{ project.benefit }}</p>
       </div>
     </template>
 
