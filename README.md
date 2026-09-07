@@ -1,43 +1,49 @@
-# Dual-Audience Static Portfolio
+# Dual-Audience Vue Portfolio
 
-A zero-dependency portfolio with a shared content source and two audience-specific presentations.
+A Vue 3 single-page portfolio built with Vite and Vue Router. One shared content source powers technical and client-facing presentations.
 
 ## Routes
 
 - `/` — portfolio view selector
-- `/dev/` — technical portfolio
-- `/client/` — client portfolio
+- `/dev` — technical portfolio
+- `/client` — client portfolio
 
 The selected view is saved in `localStorage` under `portfolio_view`. Returning to `/` opens the saved view automatically. “Choose another view” clears the preference.
 
-## Run Locally
-
-The portfolio fetches `data.json`, so serve the directory over HTTP:
+## Development
 
 ```bash
-python3 -m http.server
+npm install
+npm run dev
 ```
 
-Then open [http://localhost:8000](http://localhost:8000).
+Create and preview a production build:
 
-## Edit Content
+```bash
+npm run build
+npm run preview
+```
 
-Core content lives in `data.json` and is rendered by `app.js` for both portfolio views.
+The build creates `dist/dev/index.html` and `dist/client/index.html` fallbacks so direct route requests work on ordinary static hosts. Set `VITE_BASE` when deploying below a domain subpath.
 
-- Existing top-level identity, experience, projects, skills, and contact fields drive the technical view.
-- The top-level `client` object contains client-specific hero copy, selected project IDs, services, process steps, and the secondary technology list.
-- Each project can include `technicalDetails`, `clientSummary`, `clientProblem`, `clientSolution`, `features`, `benefit`, and optional `screenshots`.
+## Content
 
-For screenshots, use paths relative to this directory:
+`data.json` is the single source of portfolio content.
+
+- Top-level identity, experience, projects, skills, and contact fields drive the technical view.
+- The `client` object contains client-specific hero copy, selected project IDs, services, process steps, and technologies.
+- Project records can contain `technicalDetails`, client-facing fields, and optional screenshots.
+
+Public assets live in `public`. Screenshot paths in `data.json` are relative to that directory:
 
 ```json
 "screenshots": [
   {
     "src": "images/project-dashboard.png",
     "alt": "Project dashboard",
-    "caption": "Illustrative interface mockup"
+    "caption": "Illustrative mockup"
   }
 ]
 ```
 
-Projects without screenshots render normally without an empty placeholder.
+Projects without screenshots render without empty media placeholders.
