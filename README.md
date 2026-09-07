@@ -1,30 +1,39 @@
-# Minimal Static Portfolio
+# Dual-Audience Static Portfolio
 
-A single-page static portfolio built from scratch with zero dependencies, fetching content dynamically from a JSON file.
+A zero-dependency portfolio with a shared content source and two audience-specific presentations.
 
-## How to Run Locally
+## Routes
 
-Since the `index.html` uses `fetch()` to read a local file (`data.json`), it requires a local HTTP server to avoid CORS issues. You can run one instantly using Python 3:
+- `/` — portfolio view selector
+- `/dev/` — technical portfolio
+- `/client/` — client portfolio
+
+The selected view is saved in `localStorage` under `portfolio_view`. Returning to `/` opens the saved view automatically. “Choose another view” clears the preference.
+
+## Run Locally
+
+The portfolio fetches `data.json`, so serve the directory over HTTP:
 
 ```bash
 python3 -m http.server
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000) in your browser.
+Then open [http://localhost:8000](http://localhost:8000).
 
-## How to Edit Content
+## Edit Content
 
-All content is driven by the `data.json` file. You **do not** need to edit the HTML or CSS to add or remove entries.
+Core content lives in `data.json` and is rendered by `app.js` for both portfolio views.
 
-To add a new project or job entry, simply append a new object to the `projects` or `experience` arrays in `data.json`:
+- Existing top-level identity, experience, projects, skills, and contact fields drive the technical view.
+- The top-level `client` object contains client-specific hero copy, selected project IDs, services, process steps, and the secondary technology list.
+- Each project can include `technicalDetails`, `clientSummary`, `clientProblem`, `clientSolution`, `features`, `benefit`, and optional `screenshots`.
+
+For screenshots, use paths relative to this directory:
 
 ```json
-{
-  "title": "New Job Title",
-  "org": "Company Name",
-  "period": "2024",
-  "detail": "Description of the job."
-}
+"screenshots": [
+  { "src": "images/project-dashboard.png", "alt": "Project dashboard" }
+]
 ```
 
-Save the file and refresh the page to see the new entry automatically rendered.
+Projects without screenshots render normally without an empty placeholder.

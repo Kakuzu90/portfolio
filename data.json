@@ -1,134 +1,279 @@
 {
-    "name": "Clyde Arellano",
-    "role": "Backend Software Developer",
-    "headline": "I build scalable backend systems and APIs that prioritize reliability, maintainability, and clean architecture.",
-    "tagline": "Building reliable backend systems with clean architecture, scalable APIs, and maintainable code that powers great user experiences.",
-    "availability": "Open to freelance opportunities",
-    "resumeUrl": "resume.pdf",
-    "lastUpdated": "August 2026",
-    "about": "I'm a backend-focused software developer with over five years of professional experience building and maintaining web applications using PHP and modern backend technologies. My expertise includes Laravel, CakePHP, MySQL, Redis, Docker, and RESTful API development. I enjoy designing clean architectures, solving complex business problems, and building systems that are secure, scalable, and maintainable. Currently, I work as a Backend Developer at Forty Degrees Celsius Inc. while continuously exploring AI-assisted development, automation, and modern software engineering practices.",
-    "experience": [
-        {
-            "title": "Backend Developer",
-            "org": "Forty Degrees Celsius Inc.",
-            "period": "2024 — Present",
-            "detail": "Develop and maintain large-scale backend systems, implement new features, optimize existing services, troubleshoot production issues, and collaborate with cross-functional teams to deliver reliable software."
-        },
-        {
-            "title": "Software Engineer",
-            "org": "Straive",
-            "period": "Nov 2023 — Mar 2024",
-            "detail": "Developed and maintained data processing solutions using Perl and C++. Built automation scripts and transformed client data into XML for enterprise publishing workflows."
-        },
-        {
-            "title": "Freelance Backend & Software Developer",
-            "org": "Self-Employed",
-            "period": "2021 — 2024",
-            "detail": "Designed and developed custom web applications, REST APIs, database solutions, and business systems for various clients using PHP, MySQL, JavaScript, and modern development tools."
-        }
-    ],
-    "projects": [
-        {
-            "name": "Teacher Document Review System",
-            "role": "System Designer & Backend Developer",
-            "problem": "Educational organizations needed a centralized platform for document submissions, reviews, comments, approvals, and revision tracking.",
-            "outcome": "Designed a document management workflow featuring submissions, reviewer feedback, approval pipelines, notifications, and comprehensive status tracking.",
-            "url": "#",
-            "tags": [
-                "Laravel",
-                "Document Management",
-                "Workflow"
-            ]
-        },
-        {
-            "name": "FETCH ME",
-            "role": "Full Stack Developer",
-            "problem": "Passengers needed an efficient way to connect with nearby drivers through a centralized booking platform.",
-            "outcome": "Developed a ride-matching platform featuring booking workflows, driver-passenger matching logic, and real-time ride status updates using Laravel and Vue.js.",
-            "tags": [
-                "Laravel",
-                "Vue.js",
-                "MySQL",
-                "Transportation"
-            ]
-        },
-        {
-            "name": "Academic Document Repository System",
-            "role": "Full Stack Developer",
-            "problem": "Academic research documents were difficult to organize, secure, and retrieve across different colleges and departments.",
-            "outcome": "Built a role-based document repository that streamlines uploading, searching, downloading, and managing academic research with structured classification and secure access controls.",
-            "tags": [
-                "Laravel",
-                "Vue.js",
-                "MySQL",
-                "Document Management"
-            ]
-        },
-        {
-            "name": "NORSU-BSC ID Configurator System",
-            "role": "Full Stack Developer",
-            "problem": "Managing student ID information manually made updates, customization, and record maintenance inefficient.",
-            "outcome": "Developed a centralized ID management platform allowing administrators to configure student records and ID templates through an intuitive web interface.",
-            "tags": [
-                "Laravel",
-                "Vue.js",
-                "MySQL",
-                "Administration"
-            ]
-        },
-        {
-            "name": "Campus Bulletin & Notification System",
-            "role": "Full Stack Developer",
-            "problem": "Students often missed important campus announcements due to fragmented communication channels.",
-            "outcome": "Built web and mobile applications enabling administrators to publish announcements and send real-time notifications directly to students.",
-            "tags": [
-                "Laravel",
-                "Vue.js",
-                "Java",
-                "Notifications"
-            ]
-        },
-        {
-            "name": "ASL Recognition System",
-            "role": "Machine Learning & Computer Vision Developer",
-            "problem": "Communication between individuals using American Sign Language and non-signers can be difficult without real-time translation tools.",
-            "outcome": "Built a real-time ASL recognition system using MediaPipe hand landmarks and TensorFlow models to accurately classify multiple hand gestures from live camera input.",
-            "tags": [
-                "Python",
-                "TensorFlow",
-                "MediaPipe",
-                "Machine Learning"
-            ]
-        }
-    ],
-    "skills": [
-        "PHP",
-        "JAVA",
-        "Python",
-        "Laravel",
-        "CakePHP",
-        "Flask",
-        "MySQL",
-        "Redis",
-        "Docker",
-        "JavaScript",
-        "Vue.js",
-        "Git",
-        "Android Development",
-        "REST API Development",
-        "AI-assisted Development"
-    ],
-    "contact": {
-        "email": "clydesavvy@gmail.com",
-        "socials": [
-            {
-                "label": "LinkedIn",
-                "url": "https://www.linkedin.com/in/clyde-arellano-86a330288/"
-            },
-            {
-                "label": "GitHub",
-                "url": "https://github.com/kakuzu90/"
-            }
-        ]
+  "name": "Clyde Arellano",
+  "role": "Backend Software Developer",
+  "headline": "I build scalable backend systems and APIs that prioritize reliability, maintainability, and clean architecture.",
+  "tagline": "Building reliable backend systems with clean architecture, scalable APIs, and maintainable code that powers great user experiences.",
+  "availability": "Open to freelance opportunities",
+  "resumeUrl": "resume.pdf",
+  "lastUpdated": "August 2026",
+  "about": "I'm a backend-focused software developer with over five years of professional experience building and maintaining web applications using PHP and modern backend technologies. My expertise includes Laravel, CakePHP, MySQL, Redis, Docker, and RESTful API development. I enjoy designing clean architectures, solving complex business problems, and building systems that are secure, scalable, and maintainable. Currently, I work as a Backend Developer at Forty Degrees Celsius Inc. while continuously exploring AI-assisted development, automation, and modern software engineering practices.",
+  "experience": [
+    {
+      "title": "Backend Developer",
+      "org": "Forty Degrees Celsius Inc.",
+      "period": "2024 — Present",
+      "detail": "Develop and maintain large-scale backend systems, implement new features, optimize existing services, troubleshoot production issues, and collaborate with cross-functional teams to deliver reliable software."
+    },
+    {
+      "title": "Software Engineer",
+      "org": "Straive",
+      "period": "Nov 2023 — Mar 2024",
+      "detail": "Developed and maintained data processing solutions using Perl and C++. Built automation scripts and transformed client data into XML for enterprise publishing workflows."
+    },
+    {
+      "title": "Freelance Backend & Software Developer",
+      "org": "Self-Employed",
+      "period": "2021 — 2024",
+      "detail": "Designed and developed custom web applications, REST APIs, database solutions, and business systems for various clients using PHP, MySQL, JavaScript, and modern development tools."
     }
+  ],
+  "projects": [
+    {
+      "id": "teacher-document-review",
+      "name": "Teacher Document Review System",
+      "role": "System Designer & Backend Developer",
+      "problem": "Educational organizations needed a centralized platform for document submissions, reviews, comments, approvals, and revision tracking.",
+      "outcome": "Designed a document management workflow featuring submissions, reviewer feedback, approval pipelines, notifications, and comprehensive status tracking.",
+      "url": "#",
+      "tags": ["Laravel", "Document Management", "Workflow"],
+      "technicalDetails": {
+        "architecture": "A Laravel application organized around document submissions, reviewer feedback, approval stages, notifications, and status history.",
+        "responsibilities": [
+          "Designed the document review and approval workflow.",
+          "Implemented the backend flows for submissions, feedback, approvals, notifications, and status tracking."
+        ],
+        "engineeringNotes": [
+          "Structured the workflow so reviewers and submitters can follow each document through its review lifecycle."
+        ]
+      },
+      "clientSummary": "A central workspace for submitting, reviewing, revising, and approving educational documents.",
+      "clientProblem": "Document reviews were difficult to coordinate when submissions, feedback, revisions, and approvals lived in separate places.",
+      "clientSolution": "Built one system where teachers can submit documents and reviewers can provide feedback, request changes, and approve work.",
+      "features": ["Document submissions", "Reviewer comments", "Approval stages", "Revision tracking", "Status notifications"],
+      "benefit": "Keeps the full review process organized and makes each document's current status easier to understand."
+    },
+    {
+      "id": "fetch-me",
+      "name": "FETCH ME",
+      "role": "Full Stack Developer",
+      "problem": "Passengers needed an efficient way to connect with nearby drivers through a centralized booking platform.",
+      "outcome": "Developed a ride-matching platform featuring booking workflows, driver-passenger matching logic, and real-time ride status updates using Laravel and Vue.js.",
+      "tags": ["Laravel", "Vue.js", "MySQL", "Transportation"],
+      "technicalDetails": {
+        "architecture": "A Laravel backend and MySQL database support a Vue.js interface for ride booking, driver-passenger matching, and ride status updates.",
+        "responsibilities": [
+          "Built the booking workflow and driver-passenger matching logic.",
+          "Developed the backend and user-facing application."
+        ],
+        "engineeringNotes": [
+          "Kept booking and ride-status changes coordinated across passenger and driver workflows."
+        ]
+      },
+      "clientSummary": "A booking platform that helps passengers find nearby drivers and follow the progress of a ride.",
+      "clientProblem": "Passengers needed a simpler way to request rides and connect with available drivers.",
+      "clientSolution": "Created a centralized platform for booking, matching passengers with drivers, and sharing ride status updates.",
+      "features": ["Ride booking", "Nearby driver matching", "Passenger and driver workflows", "Ride status updates"],
+      "benefit": "Gives passengers and drivers one clear place to coordinate a ride from request through completion."
+    },
+    {
+      "id": "academic-repository",
+      "name": "Academic Document Repository System",
+      "role": "Full Stack Developer",
+      "problem": "Academic research documents were difficult to organize, secure, and retrieve across different colleges and departments.",
+      "outcome": "Built a role-based document repository that streamlines uploading, searching, downloading, and managing academic research with structured classification and secure access controls.",
+      "tags": ["Laravel", "Vue.js", "MySQL", "Document Management"],
+      "technicalDetails": {
+        "architecture": "A Laravel and MySQL backend with a Vue.js interface, structured document classification, role-based permissions, search, and download flows.",
+        "responsibilities": [
+          "Developed the repository's backend and frontend.",
+          "Implemented document organization, search, download, and access-control features."
+        ],
+        "engineeringNotes": [
+          "Used role-based access to control how academic documents are managed and retrieved."
+        ]
+      },
+      "clientSummary": "A secure, searchable home for academic research across colleges and departments.",
+      "clientProblem": "Research documents were hard to organize and retrieve consistently across different academic units.",
+      "clientSolution": "Built a shared repository where authorized users can upload, classify, search, download, and manage research documents.",
+      "features": ["Structured document library", "Search and download", "User access levels", "College and department classification"],
+      "benefit": "Makes academic work easier to find while keeping document access and management organized."
+    },
+    {
+      "id": "id-configurator",
+      "name": "NORSU-BSC ID Configurator System",
+      "role": "Full Stack Developer",
+      "problem": "Managing student ID information manually made updates, customization, and record maintenance inefficient.",
+      "outcome": "Developed a centralized ID management platform allowing administrators to configure student records and ID templates through an intuitive web interface.",
+      "tags": ["Laravel", "Vue.js", "MySQL", "Administration"],
+      "technicalDetails": {
+        "architecture": "A Laravel and MySQL application with a Vue.js administration interface for student records and configurable ID templates.",
+        "responsibilities": [
+          "Developed the administrative frontend and backend.",
+          "Implemented student record and ID template configuration workflows."
+        ]
+      },
+      "clientSummary": "An administration system for managing student information and configuring ID templates.",
+      "clientProblem": "Manual student ID preparation made record changes and template updates time-consuming.",
+      "clientSolution": "Created a central interface where administrators can maintain student records and configure ID layouts.",
+      "features": ["Student record management", "Configurable ID templates", "Central administration interface"],
+      "benefit": "Simplifies routine ID updates and keeps student information in one manageable system."
+    },
+    {
+      "id": "campus-bulletin",
+      "name": "Campus Bulletin & Notification System",
+      "role": "Full Stack Developer",
+      "problem": "Students often missed important campus announcements due to fragmented communication channels.",
+      "outcome": "Built web and mobile applications enabling administrators to publish announcements and send real-time notifications directly to students.",
+      "tags": ["Laravel", "Vue.js", "Java", "Notifications"],
+      "technicalDetails": {
+        "architecture": "A Laravel backend supports a Vue.js web application and Java mobile application for publishing announcements and delivering notifications.",
+        "responsibilities": [
+          "Built the web, mobile, and backend parts of the system.",
+          "Implemented announcement publishing and student notification flows."
+        ],
+        "engineeringNotes": [
+          "Connected web-based publishing with mobile delivery so updates reach students through one coordinated system."
+        ]
+      },
+      "clientSummary": "A web and mobile communication system for publishing campus updates directly to students.",
+      "clientProblem": "Important announcements were spread across different channels and could easily be missed.",
+      "clientSolution": "Built tools for administrators to publish updates and send timely notifications to students.",
+      "features": ["Announcement publishing", "Web administration", "Student mobile application", "Timely notifications"],
+      "benefit": "Creates a clearer communication channel between campus administrators and students."
+    },
+    {
+      "id": "asl-recognition",
+      "name": "ASL Recognition System",
+      "role": "Machine Learning & Computer Vision Developer",
+      "problem": "Communication between individuals using American Sign Language and non-signers can be difficult without real-time translation tools.",
+      "outcome": "Built a real-time ASL recognition system using MediaPipe hand landmarks and TensorFlow models to accurately classify multiple hand gestures from live camera input.",
+      "tags": ["Python", "TensorFlow", "MediaPipe", "Machine Learning"],
+      "technicalDetails": {
+        "architecture": "A Python computer-vision pipeline extracts hand landmarks from live camera input with MediaPipe and classifies gestures with TensorFlow models.",
+        "responsibilities": [
+          "Built the real-time hand tracking and gesture-classification pipeline.",
+          "Integrated camera input, landmark extraction, and model predictions."
+        ],
+        "engineeringNotes": [
+          "Processed live camera frames to support immediate gesture classification."
+        ]
+      },
+      "clientSummary": "A camera-based tool that recognizes multiple American Sign Language hand gestures in real time.",
+      "clientProblem": "People who do not understand American Sign Language can find it difficult to interpret signed communication.",
+      "clientSolution": "Created a system that watches hand movements through a camera and identifies supported gestures as they are made.",
+      "features": ["Live camera recognition", "Hand tracking", "Multiple gesture classification", "Immediate on-screen results"],
+      "benefit": "Demonstrates how computer vision can help make signed communication more accessible."
+    }
+  ],
+  "skills": [
+    "PHP",
+    "JAVA",
+    "Python",
+    "Laravel",
+    "CakePHP",
+    "Flask",
+    "MySQL",
+    "Redis",
+    "Docker",
+    "JavaScript",
+    "Vue.js",
+    "Git",
+    "Android Development",
+    "REST API Development",
+    "AI-assisted Development"
+  ],
+  "client": {
+    "role": "Web Application & Software Developer",
+    "headline": "I build web applications and software that help businesses automate work, organize information, and turn ideas into usable products.",
+    "tagline": "From an early idea to a working system, I focus on practical software that is clear, dependable, and built around the people who use it.",
+    "metaDescription": "Custom web applications, internal business systems, automation tools, and software development by Clyde Arellano.",
+    "selectedProjects": [
+      "teacher-document-review",
+      "fetch-me",
+      "academic-repository",
+      "campus-bulletin",
+      "asl-recognition"
+    ],
+    "services": [
+      {
+        "name": "Custom Web Applications",
+        "description": "Software designed around your workflow, users, and business requirements."
+      },
+      {
+        "name": "Internal Business Systems",
+        "description": "Central tools that help teams organize records, approvals, and day-to-day work."
+      },
+      {
+        "name": "Admin Dashboards",
+        "description": "Clear interfaces for managing users, content, activity, and important information."
+      },
+      {
+        "name": "API Development & Integration",
+        "description": "Reliable connections between your application and the services it depends on."
+      },
+      {
+        "name": "Automation Tools",
+        "description": "Purpose-built tools that reduce repetitive work and keep processes consistent."
+      },
+      {
+        "name": "Existing System Maintenance",
+        "description": "Improvements, fixes, and continued support for software you already use."
+      },
+      {
+        "name": "MVP Development",
+        "description": "A focused first version that turns a product idea into something people can use."
+      },
+      {
+        "name": "Backend Development",
+        "description": "The secure, dependable systems behind web and mobile applications."
+      }
+    ],
+    "process": [
+      {
+        "title": "Discuss the idea",
+        "description": "We talk through the problem, the people involved, and what a useful result looks like."
+      },
+      {
+        "title": "Define requirements",
+        "description": "We turn the idea into a clear set of goals, features, and priorities."
+      },
+      {
+        "title": "Plan the solution",
+        "description": "I map the work into a practical approach with clear expectations."
+      },
+      {
+        "title": "Build the project",
+        "description": "I develop the agreed features and keep progress visible along the way."
+      },
+      {
+        "title": "Review and test",
+        "description": "We check the workflows together and resolve issues before release."
+      },
+      {
+        "title": "Launch",
+        "description": "The finished project is prepared and released for its intended users."
+      },
+      {
+        "title": "Optional continued maintenance",
+        "description": "I can continue supporting, improving, and extending the system after launch."
+      }
+    ],
+    "technologyIntro": "I choose proven tools based on the project's needs. Technology supports the outcome; it is not the starting point.",
+    "technologies": ["Laravel", "PHP", "Vue.js", "JavaScript", "MySQL", "Python", "Docker"],
+    "contactHeading": "Have a project in mind?",
+    "contactText": "Let's discuss what you're trying to build and the problem you want it to solve."
+  },
+  "contact": {
+    "email": "clydesavvy@gmail.com",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/clyde-arellano-86a330288/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/kakuzu90/"
+      }
+    ]
+  }
 }
