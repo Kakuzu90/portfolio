@@ -26,7 +26,7 @@ This repository contains Clyde Arellano's dual-audience portfolio. It is a Vue 3
 - Use Vue 3 Composition API with `<script setup>`.
 - Keep components focused and reusable; do not duplicate project data between views.
 - Preserve the `portfolio_view` localStorage contract with `dev` and `client` values.
-- Preserve the `portfolio_palette` localStorage contract with `cobalt`, `forest`, `aubergine`, `cyan`, and `lime` values.
+- Keep Midnight Cobalt as the sole color palette.
 - Direct route visits must work without passing through the selector.
 - Keep the application dependency-light; add a package only when the platform cannot reasonably provide the behavior.
 - Preserve keyboard navigation, visible focus styles, semantic HTML, accessible contrast, and `prefers-reduced-motion` support.

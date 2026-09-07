@@ -3,8 +3,8 @@ defineProps({ show: Boolean })
 
 function scrollToTop() {
   const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' })
-  document.querySelector('.nav__brand')?.focus()
+  document.querySelector('.nav__brand')?.focus({ preventScroll: true })
+  window.scrollTo({ top: 0, left: 0, behavior: smooth ? 'smooth' : 'auto' })
 }
 </script>
 

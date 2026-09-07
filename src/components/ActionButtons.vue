@@ -7,6 +7,7 @@ const props = defineProps({
   resumeUrl: { type: String, default: '' },
   mode: { type: String, required: true },
   place: { type: String, default: 'hero' },
+  hidePrimary: Boolean,
 })
 
 const copied = ref(false)
@@ -50,7 +51,7 @@ function copyEmail() {
 
 <template>
   <div class="actions">
-    <a class="btn btn--primary" :href="`mailto:${email}`">
+    <a v-if="!hidePrimary" class="btn btn--primary" :href="`mailto:${email}`">
       {{ mode === 'client' ? 'Start a Project' : place === 'footer' ? 'Get in touch' : 'Email me' }}
     </a>
     <button class="copy" :class="{ 'is-copied': copied }" type="button" aria-label="Copy email address" @click="copyEmail">
