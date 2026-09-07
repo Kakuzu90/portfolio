@@ -24,7 +24,7 @@ const description = computed(() => (
 
 <template>
   <section id="contact" class="section reveal" aria-labelledby="contact-label">
-    <SectionHeading id="contact-label" :index="index" label="Contact" />
+    <SectionHeading id="contact-label" as="p" :index="index" label="Contact" />
     <div class="contact__body">
       <div class="contact__intro">
         <p v-if="portfolio.availability" class="contact__status"><span />{{ portfolio.availability }}</p>

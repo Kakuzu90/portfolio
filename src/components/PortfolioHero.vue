@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <section id="top" class="hero reveal" :class="`hero--${mode}`">
-    <SectionHeading id="top-label" index="00" :label="mode === 'client' ? 'For Clients' : 'Technical Portfolio'" />
+    <SectionHeading id="top-label" as="p" index="00" :label="mode === 'client' ? 'For Clients' : 'Technical Portfolio'" />
     <p v-if="portfolio.availability" class="pill"><span class="pill__dot" />{{ portfolio.availability }}</p>
     <h1 class="hero__name">{{ portfolio.name }}</h1>
     <template v-if="mode === 'client'">
