@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { assetUrl, savePortfolioView } from '../utils/preferences'
+import PaletteSwitcher from './PaletteSwitcher.vue'
 import ThemeToggle from './ThemeToggle.vue'
 
 defineProps({
@@ -30,6 +31,7 @@ defineProps({
         :to="{ name: mode === 'client' ? 'dev' : 'client' }"
         @click="savePortfolioView(mode === 'client' ? 'dev' : 'client')"
       >{{ mode === 'client' ? 'Technical view →' : 'Client view →' }}</RouterLink>
+      <PaletteSwitcher />
       <ThemeToggle />
     </nav>
   </header>

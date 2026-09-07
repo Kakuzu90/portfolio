@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import portfolio from '../../data.json'
+import PaletteSwitcher from '../components/PaletteSwitcher.vue'
 import ThemeToggle from '../components/ThemeToggle.vue'
 import { useMeta } from '../composables/useMeta'
 import { savePortfolioView } from '../utils/preferences'
@@ -15,6 +16,7 @@ useMeta(() => ({
 <template>
   <div class="selector-page">
     <a class="skip" href="#main">Skip to portfolio choices</a>
+    <PaletteSwitcher class="selector__palette" />
     <ThemeToggle class="selector__theme" />
     <main id="main" class="selector">
       <header class="selector__intro reveal in">

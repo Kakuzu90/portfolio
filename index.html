@@ -15,8 +15,16 @@
     <meta name="twitter:description" content="Choose the technical or client view of Clyde Arellano's portfolio." />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <style>
-      :root { --boot-bg: #f2efe8; --boot-fg: #151515; --boot-accent: #e43d2f; }
-      html.dark-theme { --boot-bg: #0d0e0f; --boot-fg: #f3f0e9; --boot-accent: #ff5545; }
+      :root { --boot-bg: #f3f6fc; --boot-fg: #101828; --boot-accent: #315efb; }
+      html[data-palette="forest"] { --boot-bg: #f4f5ef; --boot-fg: #17201c; --boot-accent: #b85432; }
+      html[data-palette="aubergine"] { --boot-bg: #f8f4f7; --boot-fg: #251426; --boot-accent: #a66a18; }
+      html[data-palette="cyan"] { --boot-bg: #f1f5f7; --boot-fg: #10242b; --boot-accent: #008b9b; }
+      html[data-palette="lime"] { --boot-bg: #f4f5f1; --boot-fg: #191c17; --boot-accent: #5e7d16; }
+      html.dark-theme { --boot-bg: #090d18; --boot-fg: #f4f7ff; --boot-accent: #6f8fff; }
+      html.dark-theme[data-palette="forest"] { --boot-bg: #0c1210; --boot-fg: #f2f5f0; --boot-accent: #e47a55; }
+      html.dark-theme[data-palette="aubergine"] { --boot-bg: #140d16; --boot-fg: #faf4fa; --boot-accent: #e3a84b; }
+      html.dark-theme[data-palette="cyan"] { --boot-bg: #081114; --boot-fg: #edf9fc; --boot-accent: #26c6d5; }
+      html.dark-theme[data-palette="lime"] { --boot-bg: #0e100d; --boot-fg: #f4f7ef; --boot-accent: #a4d94f; }
       body { margin: 0; }
       #boot-loader {
         position: fixed;
@@ -60,6 +68,9 @@
     </style>
     <script>
       try {
+        const allowedPalettes = ['cobalt', 'forest', 'aubergine', 'cyan', 'lime']
+        const savedPalette = localStorage.getItem('portfolio_palette')
+        document.documentElement.dataset.palette = allowedPalettes.includes(savedPalette) ? savedPalette : 'cobalt'
         const savedTheme = localStorage.getItem('theme')
         if (savedTheme === 'dark' || (!savedTheme && matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.classList.add('dark-theme')

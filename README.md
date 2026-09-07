@@ -10,6 +10,8 @@ A Vue 3 single-page portfolio built with Vite and Vue Router. One shared content
 
 The selected view is saved in `localStorage` under `portfolio_view`. Returning to `/` opens the saved view automatically. “Choose another view” clears the preference.
 
+The palette tester is available beside the light/dark toggle. Its selection is saved under `portfolio_palette` and applies to every route.
+
 ## Development
 
 ```bash
