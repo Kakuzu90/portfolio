@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { savePortfolioView } from '../utils/preferences'
 
@@ -8,8 +9,8 @@ const props = defineProps({
   mode: { type: String, default: 'dev' },
 })
 
-const other = props.mode === 'client' ? 'dev' : 'client'
-const otherLabel = props.mode === 'client' ? 'Technical view' : 'Client view'
+const other = computed(() => (props.mode === 'client' ? 'dev' : 'client'))
+const otherLabel = computed(() => (props.mode === 'client' ? 'Technical view' : 'Client view'))
 </script>
 
 <template>

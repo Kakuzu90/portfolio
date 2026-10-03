@@ -9,6 +9,7 @@ defineProps({
 
 <template>
   <component :is="as" :id="id" class="overline">
-    <span class="overline__idx">{{ index }}</span>{{ label }}
+    <span class="overline__idx" aria-hidden="true">{{ index }}</span>
+    <span class="overline__label">{{ label }}</span>
   </component>
 </template>

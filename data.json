@@ -321,8 +321,12 @@
       "Vue.js",
       "JavaScript",
       "MySQL",
+      "SQLite",
+      "PostgreSQL",
+      "JAVA",
       "Python",
-      "Docker"
+      "Docker",
+      "Firebase"
     ],
     "contactHeading": "Have a project in mind?",
     "contactText": "Let's discuss what you're trying to build and the problem you want it to solve."

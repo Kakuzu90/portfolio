@@ -23,12 +23,12 @@ const description = computed(() => (
 </script>
 
 <template>
-  <section id="contact" class="section reveal" aria-labelledby="contact-label">
+  <section id="contact" class="section contact" :class="`contact--${mode}`" aria-labelledby="contact-heading">
     <SectionHeading id="contact-label" as="p" :index="index" label="Contact" />
     <div class="contact__body">
       <div class="contact__intro">
-        <p v-if="portfolio.availability" class="contact__status"><span />{{ portfolio.availability }}</p>
-        <h2 class="contact__heading">{{ heading }}</h2>
+        <p v-if="portfolio.availability" class="contact__status"><span aria-hidden="true" />{{ portfolio.availability }}</p>
+        <h2 id="contact-heading" class="contact__heading">{{ heading }}</h2>
         <p class="contact__text">{{ description }}</p>
       </div>
 
